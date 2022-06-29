@@ -10,10 +10,9 @@
 		
 ## 	How to use the API
 		robot_send_program(robot, rq_close())
-
-		robot_send_program is from the URRobotAPI. Used to send programs to the robot.
-		robot is the object created for the robot the gripper is connected to. Used to know which 	robot to send the program to.
-		rq_close() creates a program using this API, that closes the gripper when sent to the robot.
+		- "robot_send_program" is from the URRobotAPI. Used to send programs to the robot.
+		- "robot" is used to know which the robot to send the program to.
+		- "rq_close()" creates a program using this API, that closes the gripper when sent to the robot.
 
 ## 	Reset the gripper
 ### 		Description
