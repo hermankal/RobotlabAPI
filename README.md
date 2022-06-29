@@ -1,7 +1,7 @@
 # RobotlabAPI
 
 ## Install requirements:
-* pip install git+https://github.com/SintefManufacturing/python-urx
+* pip install https://github.com/SintefManufacturing/python-urx/archive/refs/heads/master.zip
 * pip install requests
 * pip install urllib3
 
