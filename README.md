@@ -6,9 +6,9 @@
 	pip install urllib3
 
 # GripperAPI.py
-	## This API generates programs for specific Robotiq-gripper tasks, which can then be sent to the UR-robot the gripper is connected to.
-
-	## How to use the API
+## 	This API generates programs for specific Robotiq-gripper tasks, which can then be sent to the UR-robot the gripper is connected to.
+		
+##	How to use the API
 		robot_send_program(robot, rq_close())
 
 		robot_send_program is from the URRobotAPI. Used to send programs to the robot.
