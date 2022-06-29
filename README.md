@@ -10,33 +10,33 @@
 		
 ## 	How to use the API
 		robot_send_program(robot, rq_close())
-		- "robot_send_program" is from the URRobotAPI. Used to send programs to the robot.
-		- "robot" is used to know which the robot to send the program to.
-		- "rq_close()" creates a program using this API, that closes the gripper when sent to the robot.
+		* "robot_send_program" is from the URRobotAPI. Used to send programs to the robot.
+		* "robot" is used to know which the robot to send the program to.
+		* "rq_close()" creates a program using this API, that closes the gripper when sent to the robot.
 
 ## 	Reset the gripper
 ### 		Description
 			Resets the gripper. May be used to reset the gripper if there are any issues.
-		Command
+### 		Command
 			rq_reset()
-		Example usage
+### 		Example usage
 			robot_send_program(robot, rq_reset())
 
-	Activate the gripper
-		Description
+## 	Activate the gripper
+### 		Description
 			Activates the gripper.
 			The gripper needs to be activated for it to be used, this can also be done through the 		robot’s interface.
 			The gripper will show a blue light on the side if it’s activated.
-		Command
+### 		Command
 			rq_activate()
-		Example usage
+### 		Example usage
 			robot_send_program(robot, rq_activate()) 
-	Close the gripper
-		Description
+## 	Close the gripper
+### 		Description
 			Closes the gripper.
-		Command
+### 		Command
 			rq_close()
-		Example usage
+### 		Example usage
 			robot_send_program(robot, rq_close())
 
 	Open the gripper
