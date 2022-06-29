@@ -1,9 +1,9 @@
 # RobotlabAPI
 
 ## Install requirements:
-pip install git+https://github.com/SintefManufacturing/python-urx
-pip install requests
-pip install urllib3
+* pip install git+https://github.com/SintefManufacturing/python-urx
+* pip install requests
+* pip install urllib3
 
 
 # GripperAPI.py
@@ -18,11 +18,11 @@ robot_send_program(robot, rq_close())
 
 ## Reset the gripper
 ### 	Description
-Resets the gripper. May be used to reset the gripper if there are any issues.
+* Resets the gripper. May be used to reset the gripper if there are any issues.
 ### Command
-rq_reset()
+* rq_reset()
 ### Example usage
-robot_send_program(robot, rq_reset())
+* robot_send_program(robot, rq_reset())
 
 
 ## Activate the gripper
