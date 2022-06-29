@@ -1,6 +1,6 @@
 # RobotlabAPI
 
-Robot API is based on URX by SintefManufacturing
-
-Install URX:
+# Install requirements:
 	pip install git+https://github.com/SintefManufacturing/python-urx
+	pip install requests
+	pip install urllib3
