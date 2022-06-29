@@ -1,42 +1,42 @@
 # RobotlabAPI
 
-# Install requirements:
-	pip install git+https://github.com/SintefManufacturing/python-urx
-	pip install requests
-	pip install urllib3
+## Install requirements:
+pip install git+https://github.com/SintefManufacturing/python-urx
+pip install requests
+pip install urllib3
 
 # GripperAPI.py
-## 	This API generates programs for specific Robotiq-gripper tasks, which can then be sent to the UR-robot the gripper is connected to.
+## This API generates programs for specific Robotiq-gripper tasks, which can then be sent to the UR-robot the gripper is connected to.
 		
-## 	How to use the API
-		robot_send_program(robot, rq_close())
-		* "robot_send_program" is from the URRobotAPI. Used to send programs to the robot.
-		* "robot" is used to know which the robot to send the program to.
-		* "rq_close()" creates a program using this API, that closes the gripper when sent to the robot.
+## How to use the API
+robot_send_program(robot, rq_close())
+* "robot_send_program" is from the URRobotAPI. Used to send programs to the robot.
+* "robot" is used to know which the robot to send the program to.
+* "rq_close()" creates a program using this API, that closes the gripper when sent to the robot.
 
-## 	Reset the gripper
-### 		Description
-			Resets the gripper. May be used to reset the gripper if there are any issues.
-### 		Command
-			rq_reset()
-### 		Example usage
-			robot_send_program(robot, rq_reset())
+## Reset the gripper
+### 	Description
+Resets the gripper. May be used to reset the gripper if there are any issues.
+### Command
+rq_reset()
+### Example usage
+robot_send_program(robot, rq_reset())
 
-## 	Activate the gripper
-### 		Description
-- 			Activates the gripper.
-- 			The gripper needs to be activated for it to be used, this can also be done through the 		robot’s interface.
-- 			The gripper will show a blue light on the side if it’s activated.
-### 		Command
-			rq_activate()
-### 		Example usage
-			robot_send_program(robot, rq_activate()) 
-## 	Close the gripper
-### 		Description
-			Closes the gripper.
-### 		Command
-			rq_close()
-### 		Example usage
+## Activate the gripper
+### 	Description
+Activates the gripper.
+The gripper needs to be activated for it to be used, this can also be done through the robot’s interface.
+The gripper will show a blue light on the side if it’s activated.
+### Command
+rq_activate()
+### Example usage
+robot_send_program(robot, rq_activate()) 
+## Close the gripper
+### Description
+Closes the gripper.
+### Command
+rq_close()
+### Example usage
 			robot_send_program(robot, rq_close())
 
 	Open the gripper
