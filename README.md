@@ -24,9 +24,9 @@
 
 ## 	Activate the gripper
 ### 		Description
-			Activates the gripper.
-			The gripper needs to be activated for it to be used, this can also be done through the 		robot’s interface.
-			The gripper will show a blue light on the side if it’s activated.
+- 			Activates the gripper.
+- 			The gripper needs to be activated for it to be used, this can also be done through the 		robot’s interface.
+- 			The gripper will show a blue light on the side if it’s activated.
 ### 		Command
 			rq_activate()
 ### 		Example usage
