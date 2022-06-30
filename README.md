@@ -1,9 +1,9 @@
 # RobotlabAPI
 
 ## Install requirements:
-* pip install https://github.com/SintefManufacturing/python-urx/archive/refs/heads/master.zip
-* pip install requests
-* pip install urllib3
+* Open the Command Prompt
+* Go to the directory containing the requirements.txt file
+* Type: python -m pip install -r requirements.txt
 
 
 # GripperAPI.py
