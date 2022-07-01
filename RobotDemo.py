@@ -12,6 +12,11 @@ rob2 = robot_connect(robot2IP) # (robotIP)
 robot_set_tcp(rob2, (0.0,0.0,0.1755,0.0,0.0,0.0)) # (robot, (x, y, z, rx, ry, rz))
 time.sleep(0.15)
 
+#Activate the gripper
+print("Activate gripper")
+robot_send_program(rob2, rq_activate()) # (robot, program)
+time.sleep(2)
+
 #Open gripper
 print("Open gripper")
 robot_send_program(rob2, rq_open()) # (robot, program)
