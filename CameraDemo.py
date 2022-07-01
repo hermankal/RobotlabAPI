@@ -15,6 +15,6 @@ while True: #Runs forever break with CTRL+C
     time.sleep(2)
     
 #Moving the robot to this coordinate can be done with robot_move_simple(robot, x, y, z) after importing the URRobotAPI (from API.URRobotAPI import *)
-#robot_move_simple(rob, objectCoords[x], objectCoords[y], 0.1)
+#robot_move_simple(rob, objectCoords["x"], objectCoords["y"], 0.1)
 #Where 0.1 (10cm) is the height above the robots z zero point.
 
