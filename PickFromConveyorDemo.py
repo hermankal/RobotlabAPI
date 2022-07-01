@@ -15,6 +15,10 @@ count = 0
 # Connect to the robot
 rob2 = robot_connect(robot2IP)
 
+# Activate gripper
+robot_send_program(rob2, rq_activate())
+time.sleep(2)
+
 # Open gripper
 robot_send_program(rob2, rq_open())
 time.sleep(0.15)
@@ -79,14 +83,14 @@ while True:
         robot_move_simple(rob2, -0.2, ycor, 0.1)
         
         # Moves the robot down by 9.7 cm
-        robot_move_z(rob2, -0,097)
+        robot_move_z(rob2, -0.097)
         
         # Open the gripper to release the object
         robot_send_program(rob2, rq_open())
         time.sleep(0.15)
         
         # Move the robot up by 10cm, to avoid hitting the object when moving away
-        robot_move_z(rob2, 0,1)
+        robot_move_z(rob2, 0.1)
         
         # Move robot to a point that is guaranteed to be reachable
         robot_move_simple(rob2, -0.4, 0.0, 0.1)
