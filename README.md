@@ -1,6 +1,7 @@
 # RobotlabAPI
 
 ## Install requirements:
+* Make sure Python and PIP is installed. Note: If you have Python version 3.4 or later, PIP is included by default.
 * Open the Command Prompt
 * Go to the directory containing the requirements.txt file
 * Type: python -m pip install -r requirements.txt
@@ -29,7 +30,6 @@
 ### 	Description
 * Activates the gripper.
 * The gripper needs to be activated for it to be used, this can also be done through the robot’s interface.
-* The gripper will show a blue light on the side if it’s activated.
 ### Command
 * rq_activate()
 ### Example usage
@@ -77,7 +77,7 @@
 
 ## Set the speed of the gripper
 ### Description
-* Sets the speed the gripper.
+* Sets the speed of the gripper.
 ### Command
 * rq_set_speed(number)
 ### Example usage
