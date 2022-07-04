@@ -11,8 +11,17 @@ def rq_reset():
 def rq_activate_and_wait():
     return GripperScript + "  " + inspect.stack()[0][3] + "()\nend"
     
+
 def rq_activate():
     return GripperScript + "  " + inspect.stack()[0][3] + "()\nend"
+
+#If rq_activate does not work, you may try to choose a specific socket instead of the default socket (1)
+#Default is socket 1, if other grippers have been connected to the robot previously, the gripper currently connected may be set to another socket
+#rq_activate_socket(2)
+def rq_activate_socket(socket):
+    activateScript = rq_activate()
+    activateScript = activateScript.replace('gripper_socket="1"', 'gripper_socket="' + str(socket) + '"')
+    return activateScript
     
 def rq_close():
     return GripperScript + "  " + inspect.stack()[0][3] + "()\nend"
@@ -37,7 +46,6 @@ def rq_set_force(number):
     
 def rq_set_speed(number):
     return GripperScript + "  " + inspect.stack()[0][3] + "(" + str(number) + ")\nend"
-
 
 GripperScript = """def Gripper():
   step_count_c1ea570d_597a_4e27_b1f2_f1204aefbef2 = 0
