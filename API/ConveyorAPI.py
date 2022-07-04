@@ -3,7 +3,7 @@ import time
 
 def conveyor_start(rob):
     rob.set_digital_out(5, 1)
-    time.sleep(0.5)
+    time.sleep(0.1)
     rob.set_digital_out(5, 0)
     
 def conveyor_stop(rob):
@@ -13,10 +13,11 @@ def conveyor_stop(rob):
     
 def conveyor_speed(rob, speed):
     rob.send_program("set_analog_outputdomain(1, 1)")
+    time.sleep(0.1)
     rob.set_analog_out(1, speed)
     
-#Will add def for reversing direction later
-#def conveyor_reverse(rob):
-#   rob.set_digital_out(?, 1)
-#   time.sleep(0.1)
-#   rob.set_digital_out(?, 0)
+def conveyor_start_reverse(rob):
+    rob.set_digital_out(6, 1)
+    time.sleep(0.1)
+    rob.set_digital_out(6, 0)
+  

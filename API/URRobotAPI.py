@@ -70,7 +70,10 @@ def robot_send_program(rob, program):
     time.sleep(0.1)
     return
     
-def robot_wait(self):
-    while not self.is_program_running():
+def robot_wait(rob):
+    while not rob.is_program_running():
         time.sleep(0.1)       
     return
+    
+def robot_close_connection(rob):
+    rob.close()

@@ -19,33 +19,31 @@ def cam_change_ref_object_and_wait(ip, id):
     return ret
     
 def cam_change_ref_object_and_get_result(ip, id):
-    page = urllib.request.urlopen("http://" + ip + "/CmdChannel?sINT_1_" + id)
+    cam_change_ref_object(ip, id)
     time.sleep(3)
     return cam_get_result(ip)
     
 def cam_get_xy(ip):
-    page = urllib.request.urlopen("http://" + ip + "/CmdChannel?gRES")
-    coords = page.read().decode('utf-8')
+    coords = cam_get_result(ip).decode('utf-8')
     x = coords.split(",")
     y = x[1].split(")")
-    y = y[0]
+    y = float(y[0])
     x = x[0].split("(")
-    x = x[1]
+    x = float(x[1])
     return {"x": x, "y": y}
     
 def cam_convert_xy(x, y, offsetx, offsety):
-    x = (float(x) + offsetx) /1000
-    y = (float(y) + offsety) /1000
+    if (x == 0.00 and y == 0.00):
+        return "No object found"
+    x = (x + offsetx) /1000
+    y = (x + offsety) /1000
     return {"x": x, "y": y}
     
 def cam_get_xy_and_convert(ip, offsetx, offsety):
-    page = urllib.request.urlopen("http://" + ip + "/CmdChannel?gRES")
-    coords = page.read().decode('utf-8')
-    x = coords.split(",")
-    y = x[1].split(")")
-    y = y[0]
-    x = x[0].split("(")
-    x = x[1]
-    x = (float(x) + offsetx) /1000
-    y = (float(y) + offsety) /1000
-    return {"x": x, "y": y}
+    coords = cam_get_xy(ip)
+    return cam_convert_xy(coords["x"], coords["y"], offsetx, offsety)
+    
+# http://192.168.1.110/LiveImage.jpg
+def cam_get_jpg(ip):
+    page = urllib.request.urlopen("http://" + ip + "/LiveImage.jpg")
+    return page
