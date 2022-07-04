@@ -1,4 +1,3 @@
-import urx
 import time
 from API.GripperAPI import *
 from API.URRobotAPI import *
@@ -12,7 +11,7 @@ rob2 = robot_connect(robot2IP) # (robotIP)
 robot_set_tcp(rob2, (0.0,0.0,0.1755,0.0,0.0,0.0)) # (robot, (x, y, z, rx, ry, rz))
 time.sleep(0.15)
 
-#Activate the gripper
+#Acitvate gripper
 print("Activate gripper")
 robot_send_program(rob2, rq_activate()) # (robot, program)
 time.sleep(2)
@@ -65,4 +64,8 @@ time.sleep(2)
 #Rotate back
 print("Rotate back")
 robot_rotate_tool(rob2, -6.28) # (robot, radians)
-time.sleep(5)
+time.sleep(2)
+
+#Close connection to robot
+print("Closing connection to the robot")
+robot_close_connection(rob2)

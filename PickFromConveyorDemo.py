@@ -15,10 +15,6 @@ count = 0
 # Connect to the robot
 rob2 = robot_connect(robot2IP)
 
-# Activate gripper
-robot_send_program(rob2, rq_activate())
-time.sleep(2)
-
 # Open gripper
 robot_send_program(rob2, rq_open())
 time.sleep(0.15)
@@ -27,6 +23,11 @@ time.sleep(0.15)
 robot_set_tcp(rob2, (0.0,0.0,0.1755,0.0,0.0,0.0))
 time.sleep(0.15)
 
+robot_set_speed(rob2, 80)
+time.sleep(0.15)
+
+robot_set_acceleration(rob2, 80)
+time.sleep(0.15)
 # Start the conveyor belt
 conveyor_start(rob2)
 time.sleep(0.15)
@@ -39,7 +40,7 @@ time.sleep(0.15)
 # The first point is a point that is reachable no matter where the robot left of from earlier tasks
 robot_move_simple(rob2, -0.4, 0.0, 0.1)
 # The second point is the where it will pick objects from the conveyor belt
-robot_move_simple(rob2, 0.05, 0.38, -0.02)
+robot_move_simple_rotated(rob2, 0.05, 0.38, -0.02)
 # Delays after movement commands is not needed, the API will wait for the command to complete before returning. 
 # Sending commands to the robot before another is completed would result in the previous commands being cancelled
 
@@ -96,6 +97,6 @@ while True:
         robot_move_simple(rob2, -0.4, 0.0, 0.1)
         
         # Move back to the point where it will pick objects from the conveyor belt
-        robot_move_simple(rob2, 0.05, 0.38, -0.02)
+        robot_move_simple_rotated(rob2, 0.05, 0.38, -0.02)
     time.sleep(0.1)
     
